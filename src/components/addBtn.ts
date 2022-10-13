@@ -9,14 +9,17 @@ export class AddBtn {
       this.btn = document.getElementById('add');
    }
 
-   onClick(fn: (title: string, description: string) => void) {
+   onClick(fn: (values: object) => void) {
       this.btn.onclick = () => {
          if (!this.title.value || !this.description.value) {
             console.error('title and description are required');
             return;
          }
 
-         fn(this.title.value, this.description.value);
+         fn({
+            title: this.title.value,
+            description: this.description.value,
+         });
       };
    }
 }

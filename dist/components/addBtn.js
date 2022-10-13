@@ -10,7 +10,10 @@ export class AddBtn {
                 console.error('title and description are required');
                 return;
             }
-            fn(this.title.value, this.description.value);
+            fn({
+                title: this.title.value,
+                description: this.description.value,
+            });
         };
     }
 }
